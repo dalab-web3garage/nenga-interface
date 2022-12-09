@@ -20,14 +20,14 @@ const DAlabBadge = () => {
   const { activeChain } = useNetwork()
   const { t } = useTranslation('dalabws')
   const { data } = useAccount()
-  const henkakuBadge = getContractAddress({
-    name: 'dalabsWSBadge',
+  const dalabErc1155 = getContractAddress({
+    name: 'dalabsWSErc1555',
     chainId: activeChain?.id
   })
-  const { badge } = useBadge(henkakuBadge, tokenID)
+  const { badge } = useBadge(dalabErc1155, tokenID)
   const { tokenURIJSON } = useFetchTokenURIJSON(badge?.tokenURI)
-  const { isMinting, mint } = useMintBadge(henkakuBadge, data?.address, tokenID)
-  const { hasNft } = useBadgeBalanceOf(henkakuBadge, data?.address, tokenID)
+  const { isMinting, mint } = useMintBadge(dalabErc1155, data?.address, tokenID)
+  const { hasNft } = useBadgeBalanceOf(dalabErc1155, data?.address, tokenID)
   const [minted, setMinted] = useState(false)
 
   useEffect(() => {

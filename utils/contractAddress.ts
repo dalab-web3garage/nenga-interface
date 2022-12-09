@@ -40,6 +40,10 @@ const contractAddress: ContractAddress = {
     [chainId.goerli]: '0x002C44b7C9C30271B37B7ffF20d24eb0414Cc7e7',
     [chainId.polygon]: '0xee7Aea6F80378536998a642f924ccaC31F1c3C59'
   },
+  dalabsWSErc1555: {
+    [chainId.goerli]: '0x002C44b7C9C30271B37B7ffF20d24eb0414Cc7e7',
+    [chainId.mainnet]: '0x2c3530b4642ff8fceb6ab5fc740381a358968af1'
+  },
   dgPoap: {
     [chainId.goerli]: '0xC0Cd0Ea2c8A909E93e0F3929F05862C1477B788E',
     [chainId.polygon]: '0xE16EA5026d26b455D31eB39282B3545003aE6419'
