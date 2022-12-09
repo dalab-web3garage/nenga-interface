@@ -15,6 +15,10 @@ export const SwitchNetworkAlert: React.FC = () => {
   const { activeChain, switchNetwork } = useNetwork()
   const [isDesktopOrTablet] = useMediaQuery('(min-width:600px)')
 
+  if (activeChain?.id == chain.mainnet.id) {
+    <></>
+  }
+
   if (activeChain?.id == chain.polygon.id) {
     return <></>
   }
