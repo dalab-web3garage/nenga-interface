@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react'
 import { DAlabLayout } from '@/components/layouts/dlabLayout'
 import setLanguage from 'next-translate/setLanguage'
 import { useBadge } from '@/hooks/badge/useBadge'
+import { useDALabERC1155 } from '@/hooks/badge/useDALabERC1155'
 
 const DAlabBadge = () => {
   const router = useRouter()
@@ -24,12 +25,13 @@ const DAlabBadge = () => {
     name: 'dalabsWSErc1555',
     chainId: activeChain?.id
   })
-  const { badge } = useBadge(dalabErc1155, tokenID)
+  const { badge } = useDALabERC1155(dalabErc1155, tokenID)
   const { tokenURIJSON } = useFetchTokenURIJSON(badge?.tokenURI)
   const { isMinting, mint } = useMintBadge(dalabErc1155, data?.address, tokenID)
   const { hasNft } = useBadgeBalanceOf(dalabErc1155, data?.address, tokenID)
   const [minted, setMinted] = useState(false)
 
+  console.log('badge', badge)
   useEffect(() => {
     setLanguage('ja')
   }, [])
