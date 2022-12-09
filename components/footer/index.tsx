@@ -109,23 +109,9 @@ export const Footer = () => {
         <Text>{t('COPYRIGHT_LINE')}</Text>
         <Stack direction={'row'} spacing={6}>
           <SocialButton
-            label={'Instagram'}
-            href={'https://twitter.com/henkakuorg'}
-          >
-            <Icon as={AiFillTwitterCircle} />
-          </SocialButton>
-          <SocialButton
             label={'github'}
-            href={'https://github.com/henkaku-center/omise-interface'}
+            href={'https://github.com/orgs/dalab-web3garage/repositories'}
           >
-            <Text mr={1}>I/F</Text>
-            <Icon as={FaGithubAlt} />
-          </SocialButton>
-          <SocialButton
-            label={'github'}
-            href={'https://github.com/henkaku-center/kamon-nft'}
-          >
-            <Text mr={1}>SC</Text>
             <Icon as={FaGithubAlt} />
           </SocialButton>
         </Stack>
