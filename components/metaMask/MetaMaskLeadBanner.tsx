@@ -29,7 +29,7 @@ const MetaMaskLeadBanner = () => {
       isMobile
         ? setModal({
             body: t('MMASK_MODAL_MOBILE_BODY'),
-            link: 'https://metamask.app.link/dapp/henkaku-membership.vercel.app/',
+            link: 'https://w3g.dalab.xyz/',
             cta: t('MMASK_MODAL_MOBILE_CTA')
           })
         : setModal({
