@@ -25,6 +25,8 @@ const DAlabBadge = () => {
     name: 'dalabsWSBadge',
     chainId: activeChain?.id
   })
+  console.log(activeChain)
+  console.log(dalabErc1155)
   const { badge } = useDALabERC1155(dalabErc1155, tokenID)
   const { tokenURIJSON } = useFetchTokenURIJSON(badge?.tokenURI)
   const { isMinting, mint } = useMintBadge(dalabErc1155, data?.address, tokenID)
