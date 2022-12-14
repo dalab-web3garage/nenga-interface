@@ -16,7 +16,7 @@ const client = createClient({
     if (config.chainId == chain.polygon.id) {
       return new providers.AlchemyProvider(
         config.chainId,
-        process.env.NEXT_PUBLIC_ALCHEMY_API_KEY
+        process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_POLYGON
       )
     }
     if (config.chainId == chain.mainnet.id) {
@@ -25,10 +25,13 @@ const client = createClient({
         process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_ETH
       )
     }
-    return new providers.AlchemyProvider(
-      config.chainId,
-      process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_DEV
-    )
+    if (config.chainId == chain.goerli.id) {
+      return new providers.AlchemyProvider(
+        config.chainId,
+        process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_GOERLI
+      )
+    }
+    return new providers.AlchemyProvider()
   }
 })
 
