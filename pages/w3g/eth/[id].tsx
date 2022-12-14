@@ -11,7 +11,6 @@ import { ConnectMetaMask } from '@/components/metaMask/Connect'
 import { useEffect, useState } from 'react'
 import { DAlabLayout } from '@/components/layouts/dlabLayout'
 import setLanguage from 'next-translate/setLanguage'
-import { useBadge } from '@/hooks/badge/useBadge'
 import { useDALabERC1155 } from '@/hooks/badge/useDALabERC1155'
 
 const DAlabBadge = () => {
@@ -22,11 +21,9 @@ const DAlabBadge = () => {
   const { t } = useTranslation('dalabws')
   const { data } = useAccount()
   const dalabErc1155 = getContractAddress({
-    name: 'dalabsWSBadge',
+    name: 'dalabsWSErc1555',
     chainId: activeChain?.id
   })
-  console.log(activeChain)
-  console.log(dalabErc1155)
   const { badge } = useDALabERC1155(dalabErc1155, tokenID)
   const { tokenURIJSON } = useFetchTokenURIJSON(badge?.tokenURI)
   const { isMinting, mint } = useMintBadge(dalabErc1155, data?.address, tokenID)
