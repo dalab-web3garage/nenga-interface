@@ -35,7 +35,7 @@ const JoiNengajyoLayout = ({ children }: LayoutProps) => {
       <Box p="4">
         <Flex>
           <Box p={2}>
-            <Heading size="md">Joi's Nengajyo</Heading>
+            <Heading size="md">{`Joi's Nengajyo`}</Heading>
           </Box>
           <Spacer />
           <Box p={2}>

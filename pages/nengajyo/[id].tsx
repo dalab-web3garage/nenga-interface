@@ -26,7 +26,11 @@ const DAlabBadge = () => {
   })
   const { badge } = useNengajyoErc1155(nengajyoErc1155, tokenID)
   const { tokenURIJSON } = useFetchTokenURIJSON(badge?.tokenURI)
-  const { isMinting, mint } = useMintBadge(nengajyoErc1155, data?.address, tokenID)
+  const { isMinting, mint } = useMintBadge(
+    nengajyoErc1155,
+    data?.address,
+    tokenID
+  )
   const { hasNft } = useBadgeBalanceOf(nengajyoErc1155, data?.address, tokenID)
   const [minted, setMinted] = useState(false)
 
@@ -71,7 +75,7 @@ const DAlabBadge = () => {
         <SimpleGrid columns={{ sm: 1, md: 1, lg: 2 }} spacing={5} color="white">
           <Box>
             <Heading mt={50} size="lg">
-              Mint Joi's NENGAJYO
+              {`Mint Joi's NENGAJYO`}
             </Heading>
             {tokenURIJSON?.image && <NFTImage imageUrl={tokenURIJSON?.image} />}
           </Box>
