@@ -2,13 +2,11 @@ import {
   Container,
   Heading,
   Box,
-  Link,
   Flex,
   Spacer,
   useColorMode,
   Button
 } from '@chakra-ui/react'
-import { default as NextLink } from 'next/link'
 import { useRouter } from 'next/router'
 import useTranslation from 'next-translate/useTranslation'
 import { SwitchNetworkAlert } from '@/components/metaMask/SwitchNetworkAlert'
@@ -22,7 +20,7 @@ interface LayoutProps {
   children: React.ReactNode
 }
 
-const DAlabLayout = ({ children }: LayoutProps) => {
+const JoiNengajyoLayout = ({ children }: LayoutProps) => {
   const router = useRouter()
   const { t, lang } = useTranslation('dalabs')
   const { colorMode, toggleColorMode } = useColorMode()
@@ -37,7 +35,7 @@ const DAlabLayout = ({ children }: LayoutProps) => {
       <Box p="4">
         <Flex>
           <Box p={2}>
-            <Heading size="md">Digital Architecture Lab</Heading>
+            <Heading size="md">Joi's Nengajyo</Heading>
           </Box>
           <Spacer />
           <Box p={2}>
@@ -61,4 +59,4 @@ const DAlabLayout = ({ children }: LayoutProps) => {
   )
 }
 
-export { DAlabLayout }
+export { JoiNengajyoLayout }

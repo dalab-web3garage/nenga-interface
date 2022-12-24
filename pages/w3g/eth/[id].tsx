@@ -9,9 +9,9 @@ import { useMintBadge } from '@/hooks/badge/useMintBadge'
 import { useBadgeBalanceOf } from '@/hooks/badge/useBalanceOf'
 import { ConnectMetaMask } from '@/components/metaMask/Connect'
 import { useEffect, useState } from 'react'
-import { DAlabLayout } from '@/components/layouts/dlabLayout'
+import { DAlabLayout } from '@/components/layouts/JoiNengajyoLayout'
 import setLanguage from 'next-translate/setLanguage'
-import { useDALabERC1155 } from '@/hooks/badge/useDALabERC1155'
+import { useDALabERC1155 } from '@/hooks/badge/useNengajyoErc1155'
 
 const DAlabBadge = () => {
   const router = useRouter()

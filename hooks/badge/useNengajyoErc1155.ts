@@ -1,5 +1,5 @@
 import { useContractRead } from 'wagmi'
-import DALabERC1155 from '@/utils/abis/DaLabERC1155.json'
+import JoisNengajyo from '@/utils/abis/JoisNengajyo.json'
 import { ethers } from 'ethers'
 import { useEffect, useState } from 'react'
 
@@ -13,14 +13,14 @@ export interface Badge {
 
 const BADGE_ELEMENT_SIZE = 5
 
-export const useDALabERC1155 = (contract: string, id: number) => {
+export const useNengajyoErc1155 = (contract: string, id: number) => {
   const [badge, setBadge] = useState<Badge>()
   const { data, isError } = useContractRead(
     {
       addressOrName: contract,
-      contractInterface: DALabERC1155.abi
+      contractInterface: JoisNengajyo.abi
     },
-    'badges',
+    'items',
     {
       args: [id]
     }
@@ -31,7 +31,7 @@ export const useDALabERC1155 = (contract: string, id: number) => {
       const [mintable, transferable, maxSupply, tokenURI, maxMintPerWallet] = data
       setBadge({ mintable, transferable, maxSupply, tokenURI, maxMintPerWallet})
     }
-    console.log('badge', badge)
+    console.log('items', badge)
   }, [data])
 
   return {

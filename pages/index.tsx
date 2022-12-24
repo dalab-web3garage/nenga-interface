@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { DAlabLayout } from '@/components/layouts/dlabLayout'
+import { DAlabLayout } from '@/components/layouts/JoiNengajyoLayout'
 import { Button, Heading, Image, Link, Text } from '@chakra-ui/react'
 
 const Home: NextPage = () => {

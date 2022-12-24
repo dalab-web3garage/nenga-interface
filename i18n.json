@@ -8,6 +8,8 @@
     "/claim": ["claim"],
     "/w3g": ["badge"],
     "/w3g/[id]": ["dalabws"],
+    "/nengajyo": ["dalabws"],
+    "/nengajyo/[id]": ["dalabws"],
     "/w3g/eth/[id]": ["dalabws"],
     "/dg": ["badge"],
     "/dg/[id]": ["dg"],

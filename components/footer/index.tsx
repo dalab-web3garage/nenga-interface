@@ -65,20 +65,12 @@ export const DALabFooter = () => {
         justify={{ base: 'center', md: 'space-between' }}
         align={{ base: 'center', md: 'center' }}
       >
-        <Text>© 2022 Digital Architecture Lab</Text>
+        <Text>© joi.ito.com</Text>
         <Stack direction={'row'} spacing={6}>
           <SocialButton
             label={'github'}
-            href={'https://github.com/henkaku-center/omise-interface'}
+            href={'https://github.com/dalab-web3garage/nenga-interface'}
           >
-            <Text mr={1}>I/F</Text>
-            <Icon as={FaGithubAlt} />
-          </SocialButton>
-          <SocialButton
-            label={'github'}
-            href={'https://github.com/henkaku-center/badge'}
-          >
-            <Text mr={1}>SC</Text>
             <Icon as={FaGithubAlt} />
           </SocialButton>
         </Stack>
@@ -106,11 +98,11 @@ export const Footer = () => {
         justify={{ base: 'center', md: 'space-between' }}
         align={{ base: 'center', md: 'center' }}
       >
-        <Text>{t('COPYRIGHT_LINE')}</Text>
+        <Text>© joi.ito.com</Text>
         <Stack direction={'row'} spacing={6}>
           <SocialButton
             label={'github'}
-            href={'https://github.com/orgs/dalab-web3garage/repositories'}
+            href={'https://github.com/dalab-web3garage/nenga-interface'}
           >
             <Icon as={FaGithubAlt} />
           </SocialButton>
