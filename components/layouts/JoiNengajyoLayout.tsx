@@ -24,9 +24,6 @@ const JoiNengajyoLayout = ({ children }: LayoutProps) => {
   const router = useRouter()
   const { t, lang } = useTranslation('dalabs')
   const { colorMode, toggleColorMode } = useColorMode()
-  useEffect(() => {
-    setLanguage('ja')
-  }, [])
 
   return (
     <>

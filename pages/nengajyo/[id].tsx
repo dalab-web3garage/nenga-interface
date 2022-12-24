@@ -34,11 +34,6 @@ const DAlabBadge = () => {
   const { hasNft } = useBadgeBalanceOf(nengajyoErc1155, data?.address, tokenID)
   const [minted, setMinted] = useState(false)
 
-  console.log('badge', badge)
-  useEffect(() => {
-    setLanguage('ja')
-  }, [])
-
   useEffect(() => {
     setMinted(hasNft)
   }, [badge?.mintable, hasNft])
