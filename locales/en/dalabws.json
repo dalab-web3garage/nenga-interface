@@ -1,17 +1,17 @@
 {
   "notConnected": {
-    "title": "Let's mint our web3 garage NFT",
+    "title": "Let's mint Joi's Nengajyo NFT",
     "description": "First, we must connect our wallet.",
     "button": "Connect to Metamask "
   },
   "connected": {
     "title": "Connected!",
     "description": "Now that our wallets are connected We can go ahead and mint the NFT.",
-    "button": "Mint that NFT 💥"
+    "button": "Mint Nengajyo NFT 💥"
   },
   "afterMint": {
     "title": "Minted!",
     "description": "Success is sweet.  This NFT is now associated with this wallet, in effect your property.",
-    "notice": "Visit OpenSea.org to see it in your collection and move to the next stage of this workshop."
+    "notice": "Visit OpenSea.org to see it in your collection."
   }
 }

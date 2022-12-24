@@ -1,7 +1,7 @@
 import { ethers } from 'ethers'
 import { useState } from 'react'
 import { useContractWrite, useContractEvent, useAccount } from 'wagmi'
-import henkakuBadge from '@/utils/abis/henkakuBadge.json'
+import JoisNengajyo from '@/utils/abis/JoisNengajyo.json'
 
 export const useMintBadge = (
   contract: string,
@@ -16,7 +16,7 @@ export const useMintBadge = (
     useContractEvent(
       {
         addressOrName: contract,
-        contractInterface: henkakuBadge.abi
+        contractInterface: JoisNengajyo.abi
       },
       'TransferSingle',
       (event) => {
@@ -41,7 +41,7 @@ export const useMintBadge = (
   } = useContractWrite(
     {
       addressOrName: contract,
-      contractInterface: henkakuBadge.abi
+      contractInterface: JoisNengajyo.abi
     },
     'mint',
     {

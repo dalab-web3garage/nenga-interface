@@ -1,10 +1,4 @@
-import {
-  Heading,
-  Text,
-  SimpleGrid,
-  Button,
-  Box
-} from '@chakra-ui/react'
+import { Heading, Text, SimpleGrid, Button, Box } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import useTranslation from 'next-translate/useTranslation'
 import { useFetchTokenURIJSON } from '@/hooks/badge/useFetchMetaData'
@@ -15,30 +9,30 @@ import { useMintBadge } from '@/hooks/badge/useMintBadge'
 import { useBadgeBalanceOf } from '@/hooks/badge/useBalanceOf'
 import { ConnectMetaMask } from '@/components/metaMask/Connect'
 import { useEffect, useState } from 'react'
-import { DAlabLayout } from '@/components/layouts/dlabLayout'
+import { JoiNengajyoLayout } from '@/components/layouts/JoiNengajyoLayout'
 import setLanguage from 'next-translate/setLanguage'
-import { useBadge } from '@/hooks/badge/useBadge'
+import { useNengajyoErc1155 } from '@/hooks/badge/useNengajyoErc1155'
 
 const DAlabBadge = () => {
   const router = useRouter()
   const { id } = router.query
   const tokenID = parseInt(id as string)
   const { activeChain } = useNetwork()
-  const { t } = useTranslation('dg')
+  const { t } = useTranslation('dalabws')
   const { data } = useAccount()
-  const henkakuBadge = getContractAddress({
-    name: 'dgPoap',
+  const nengajyoErc1155 = getContractAddress({
+    name: 'nengajyo',
     chainId: activeChain?.id
   })
-  const { badge } = useBadge(henkakuBadge, tokenID)
+  const { badge } = useNengajyoErc1155(nengajyoErc1155, tokenID)
   const { tokenURIJSON } = useFetchTokenURIJSON(badge?.tokenURI)
-  const { isMinting, mint } = useMintBadge(henkakuBadge, data?.address, tokenID)
-  const { hasNft } = useBadgeBalanceOf(henkakuBadge, data?.address, tokenID)
+  const { isMinting, mint } = useMintBadge(
+    nengajyoErc1155,
+    data?.address,
+    tokenID
+  )
+  const { hasNft } = useBadgeBalanceOf(nengajyoErc1155, data?.address, tokenID)
   const [minted, setMinted] = useState(false)
-
-  useEffect(() => {
-    setLanguage('ja')
-  }, [])
 
   useEffect(() => {
     setMinted(hasNft)
@@ -47,7 +41,7 @@ const DAlabBadge = () => {
   const { isDisconnected } = useConnect()
   if (isDisconnected) {
     return (
-      <DAlabLayout>
+      <JoiNengajyoLayout>
         <SimpleGrid columns={{ sm: 1, md: 1, lg: 2 }} spacing={5} color="white">
           <Box m={5}>
             <Heading mt={50} size="lg">
@@ -61,7 +55,7 @@ const DAlabBadge = () => {
             </Text>
           </Box>
         </SimpleGrid>
-      </DAlabLayout>
+      </JoiNengajyoLayout>
     )
   }
 
@@ -72,11 +66,11 @@ const DAlabBadge = () => {
 
   if (!isDisconnected) {
     return (
-      <DAlabLayout>
+      <JoiNengajyoLayout>
         <SimpleGrid columns={{ sm: 1, md: 1, lg: 2 }} spacing={5} color="white">
           <Box>
             <Heading mt={50} size="lg">
-              MINT NFT
+              {`Mint Joi's NENGAJYO`}
             </Heading>
             {tokenURIJSON?.image && <NFTImage imageUrl={tokenURIJSON?.image} />}
           </Box>
@@ -104,7 +98,7 @@ const DAlabBadge = () => {
             </Text>
           </Box>
         </SimpleGrid>
-      </DAlabLayout>
+      </JoiNengajyoLayout>
     )
   }
 }

@@ -1,38 +1,15 @@
 import { Layout } from '@/components/layouts/layout'
 import { ConnectMetaMask } from '@/components/metaMask/Connect'
-import { contractAddress, getContractAddress } from '@/utils/contractAddress'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
-import { Button, Divider, Heading, Text } from '@chakra-ui/react'
-import { FetchTokenResult } from '@wagmi/core'
-import { ethers } from 'ethers'
+import { Button, Heading, Text } from '@chakra-ui/react'
 import useTranslation from 'next-translate/useTranslation'
 import { chainId, useAccount, useConnect, useNetwork, useToken } from 'wagmi'
 
-const addToken = async (token: FetchTokenResult) => {
-  if (window.ethereum) {
-    const wasAdded = await window.ethereum.request({
-      method: 'wallet_watchAsset',
-      params: {
-        type: 'ERC20', // Initially only supports ERC20, but eventually more!
-        options: {
-          address: token.address, // The address that the token is at.
-          symbol: token.symbol, // A ticker symbol or shorthand, up to 5 chars.
-          decimals: token.decimals, // The number of decimals in the token
-          image: 'https://omise.henkaku.org/henkakuToken.png' // A string url of the token logo
-        }
-      }
-    })
-  }
-}
 const Shiniri = () => {
   const { t } = useTranslation('shiniri')
   const { data } = useAccount()
   const { isConnected } = useConnect()
   const { activeChain, switchNetwork } = useNetwork()
-  const henkakuErc20 = getContractAddress({
-    name: 'henkakuErc20',
-    chainId: activeChain?.id
-  })
   if (!isConnected) {
     return (
       <Layout>

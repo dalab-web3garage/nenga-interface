@@ -1,26 +1,26 @@
 import { useContractRead } from 'wagmi'
-import henkakuBadge from '@/utils/abis/henkakuBadge.json'
+import JoisNengajyo from '@/utils/abis/JoisNengajyo.json'
 import { ethers } from 'ethers'
 import { useEffect, useState } from 'react'
 
 export interface Badge {
   mintable: boolean
   transferable: boolean
-  amount: ethers.BigNumber
   maxSupply: ethers.BigNumber
   tokenURI: string
+  maxMintPerWallet: ethers.BigNumber
 }
 
 const BADGE_ELEMENT_SIZE = 5
 
-export const useBadge = (contract: string, id: number) => {
+export const useNengajyoErc1155 = (contract: string, id: number) => {
   const [badge, setBadge] = useState<Badge>()
   const { data, isError } = useContractRead(
     {
       addressOrName: contract,
-      contractInterface: henkakuBadge.abi
+      contractInterface: JoisNengajyo.abi
     },
-    'badges',
+    'items',
     {
       args: [id]
     }
@@ -28,9 +28,10 @@ export const useBadge = (contract: string, id: number) => {
 
   useEffect(() => {
     if (data && data.length == BADGE_ELEMENT_SIZE) {
-      const [mintable, transferable, amount, maxSupply, tokenURI] = data
-      setBadge({ mintable, transferable, amount, maxSupply, tokenURI })
+      const [mintable, transferable, maxSupply, tokenURI, maxMintPerWallet] = data
+      setBadge({ mintable, transferable, maxSupply, tokenURI, maxMintPerWallet})
     }
+    console.log('items', badge)
   }, [data])
 
   return {

@@ -1,5 +1,5 @@
 import { useContractRead } from 'wagmi'
-import henkakuBadge from '@/utils/abis/henkakuBadge.json'
+import JoisNengajyo from '@/utils/abis/JoisNengajyo.json'
 import { ethers } from 'ethers'
 import { useEffect, useState } from 'react'
 
@@ -19,9 +19,9 @@ export const useBadge = (contract: string, id: number) => {
   const { data, isError } = useContractRead(
     {
       addressOrName: contract,
-      contractInterface: henkakuBadge.abi
+      contractInterface: JoisNengajyo.abi
     },
-    'badges',
+    'items',
     {
       args: [id]
     }

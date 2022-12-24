@@ -1,12 +1,11 @@
 import { useContractRead } from 'wagmi'
-import henkakuBadge from '@/utils/abis/henkakuBadge.json'
-import { useState } from 'react'
+import JoisNengajyo from '@/utils/abis/JoisNengajyo.json'
 
 export const useTotalSupply = (contract: string, tokenId: number) => {
   const { data: totalSupply, isError } = useContractRead(
     {
       addressOrName: contract,
-      contractInterface: henkakuBadge.abi
+      contractInterface: JoisNengajyo.abi
     },
     'totalSupply',
     {

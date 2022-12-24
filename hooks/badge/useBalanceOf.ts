@@ -1,5 +1,5 @@
 import { useContractRead } from 'wagmi'
-import henkakuBadge from '@/utils/abis/henkakuBadge.json'
+import JoisNengajyo from '@/utils/abis/JoisNengajyo.json'
 
 export const useBadgeBalanceOf = (
   contract: string,
@@ -9,7 +9,7 @@ export const useBadgeBalanceOf = (
   const { data: balanceOf, isError } = useContractRead(
     {
       addressOrName: contract,
-      contractInterface: henkakuBadge.abi
+      contractInterface: JoisNengajyo.abi
     },
     'balanceOf',
     {

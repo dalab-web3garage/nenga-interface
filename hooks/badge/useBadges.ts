@@ -1,5 +1,5 @@
 import { useContractRead } from 'wagmi'
-import henkakuBadge from '@/utils/abis/henkakuBadge.json'
+import JoisNengajyo from '@/utils/abis/JoisNengajyo.json'
 import { ethers } from 'ethers'
 
 export type BadgeElement = [
@@ -14,9 +14,9 @@ export const useBadges = (contract: string) => {
   const { data: badges, isError } = useContractRead(
     {
       addressOrName: contract,
-      contractInterface: henkakuBadge.abi
+      contractInterface: JoisNengajyo.abi
     },
-    'getBadges'
+    'getItems'
   )
 
   return {
