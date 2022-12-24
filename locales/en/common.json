@@ -43,8 +43,8 @@
   "IMAGE_PREVIEW_ALT": "Kamon NFT preview",
 
   "SWITCH_NETWORK_MSG_1": "You are using ",
-  "SWITCH_NETWORK_MSG_2": ". To use this app, switch to the Polygon (Matic) network.",
-  "SWITCH_NETWORK_BUTTON": "Switch to Polygon",
+  "SWITCH_NETWORK_MSG_2": ". To use this app, switch to the Ethereum network.",
+  "SWITCH_NETWORK_BUTTON": "Switch to Ethereum",
 
   "LAYOUT_HEADING": "Omise – HENKAKU",
   "HOME_LINK": "Home",

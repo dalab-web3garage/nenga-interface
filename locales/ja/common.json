@@ -43,8 +43,8 @@
   "IMAGE_PREVIEW_ALT": "Kamon NFTのプレビュー",
 
   "SWITCH_NETWORK_MSG_1": "あなたは今",
-  "SWITCH_NETWORK_MSG_2": "を使っています。このウェブアプリを使うには、Polygon Mainnetに切り替えてください。",
-  "SWITCH_NETWORK_BUTTON": "Polygonに切り替える",
+  "SWITCH_NETWORK_MSG_2": "を使っています。このウェブアプリを使うには、Ethereum Networkに切り替えてください。",
+  "SWITCH_NETWORK_BUTTON": "Ethereumに切り替える",
 
   "LAYOUT_HEADING": "Omise – HENKAKU",
   "HOME_LINK": "Home",

@@ -40,7 +40,7 @@ export const SwitchNetworkAlert: React.FC = () => {
         colorScheme="teal"
         variant="outline"
         rightIcon={<ArrowForwardIcon />}
-        onClick={() => switchNetwork(chain.polygon.id)}
+        onClick={() => switchNetwork(chain.mainnet.id)}
       >
         {t('SWITCH_NETWORK_BUTTON')}
       </Button>
