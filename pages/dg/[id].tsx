@@ -15,7 +15,7 @@ import { useMintBadge } from '@/hooks/badge/useMintBadge'
 import { useBadgeBalanceOf } from '@/hooks/badge/useBalanceOf'
 import { ConnectMetaMask } from '@/components/metaMask/Connect'
 import { useEffect, useState } from 'react'
-import { DAlabLayout } from '@/components/layouts/JoiNengajyoLayout'
+import { JoiNengajyoLayout } from '@/components/layouts/JoiNengajyoLayout'
 import setLanguage from 'next-translate/setLanguage'
 import { useBadge } from '@/hooks/badge/useBadge'
 
@@ -47,7 +47,7 @@ const DAlabBadge = () => {
   const { isDisconnected } = useConnect()
   if (isDisconnected) {
     return (
-      <DAlabLayout>
+      <JoiNengajyoLayout>
         <SimpleGrid columns={{ sm: 1, md: 1, lg: 2 }} spacing={5} color="white">
           <Box m={5}>
             <Heading mt={50} size="lg">
@@ -61,7 +61,7 @@ const DAlabBadge = () => {
             </Text>
           </Box>
         </SimpleGrid>
-      </DAlabLayout>
+      </JoiNengajyoLayout>
     )
   }
 
@@ -72,7 +72,7 @@ const DAlabBadge = () => {
 
   if (!isDisconnected) {
     return (
-      <DAlabLayout>
+      <JoiNengajyoLayout>
         <SimpleGrid columns={{ sm: 1, md: 1, lg: 2 }} spacing={5} color="white">
           <Box>
             <Heading mt={50} size="lg">
@@ -104,7 +104,7 @@ const DAlabBadge = () => {
             </Text>
           </Box>
         </SimpleGrid>
-      </DAlabLayout>
+      </JoiNengajyoLayout>
     )
   }
 }

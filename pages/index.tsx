@@ -1,11 +1,11 @@
 import type { NextPage } from 'next'
-import { DAlabLayout } from '@/components/layouts/JoiNengajyoLayout'
+import { JoiNengajyoLayout } from '@/components/layouts/JoiNengajyoLayout'
 import { Button, Heading, Image, Link, Text } from '@chakra-ui/react'
 
 const Home: NextPage = () => {
   return (
     <>
-      <DAlabLayout>
+      <JoiNengajyoLayout>
         <Heading as="h2" color="white.600">
           Welcome to DaLab web3 Workshop
         </Heading>
@@ -14,7 +14,7 @@ const Home: NextPage = () => {
             Go to the mint page
           </Button>
         </Link>
-      </DAlabLayout>
+      </JoiNengajyoLayout>
     </>
   )
 }
