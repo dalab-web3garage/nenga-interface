@@ -7,7 +7,7 @@
   "connected": {
     "title": "Connected!",
     "description": "Now that our wallets are connected We can go ahead and mint the NFT.",
-    "button": "Mint that NFT 💥"
+    "button": "Mint that NFT"
   },
   "afterMint": {
     "title": "Minted!",

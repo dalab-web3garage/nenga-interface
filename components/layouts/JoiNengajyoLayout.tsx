@@ -5,7 +5,8 @@ import {
   Flex,
   Spacer,
   useColorMode,
-  Button
+  Button,
+  Image
 } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import useTranslation from 'next-translate/useTranslation'
@@ -29,17 +30,21 @@ const JoiNengajyoLayout = ({ children }: LayoutProps) => {
     <>
       <SwitchNetworkAlert />
       <MetaMaskLeadBanner />
-      <Box p="4">
+      <Box
+        p="4"
+        style={{
+          opacity: 0.85,
+          backgroundImage: 'linear-gradient( 125deg, #ffffff 40%, #0299ce)',
+          backgroundSize: '100% 140px'
+        }}
+      >
         <Flex>
           <Box p={2}>
-            <Heading size="md">{`Joi's Nengajyo`}</Heading>
+            <Image src="/favicon.png" boxSize="52px" />
+            <Heading size={'md'}>年賀状 - Nengajyo</Heading>
           </Box>
           <Spacer />
           <Box p={2}>
-            <Button size="md" onClick={toggleColorMode} p={4} m={2}>
-              {colorMode == 'dark' ? <SunIcon /> : <MoonIcon />}
-            </Button>
-
             <Button
               onClick={async () =>
                 await setLanguage(lang == 'en' ? 'ja' : 'en')

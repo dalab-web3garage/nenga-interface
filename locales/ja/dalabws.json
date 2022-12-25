@@ -7,7 +7,7 @@
   "connected": {
     "title": "メタマスクのウォレットに接続できました",
     "description": "ウォレットが接続できたので、これでNFTをMINTできます。",
-    "button": "年賀状NFTをMINTする 💥"
+    "button": "年賀状NFTをMINTする"
   },
   "afterMint": {
     "title": "Mintできました!",

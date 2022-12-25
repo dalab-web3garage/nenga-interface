@@ -3,13 +3,14 @@ import useTranslation from 'next-translate/useTranslation'
 
 interface Prop {
   imageUrl: string
+  boxSize?: string
 }
 
-export const NFTImage: React.FC<Prop> = ({ imageUrl }) => {
+export const NFTImage: React.FC<Prop> = ({ imageUrl, boxSize }) => {
   const { t } = useTranslation('common')
 
   return (
-    <Box>
+    <Box boxSize={boxSize ? boxSize : 'md'}>
       <Text fontSize="xl" fontWeight="bold">
         <Badge ml={1} variant="outline" colorScheme="yellow">
           {t('IMAGE_PREVIEW_BADGE')}
