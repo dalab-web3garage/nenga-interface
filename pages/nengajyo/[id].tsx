@@ -1,4 +1,15 @@
-import { Heading, Text, SimpleGrid, Button, Box } from '@chakra-ui/react'
+import {
+  Heading,
+  Text,
+  SimpleGrid,
+  Button,
+  Box,
+  Stack,
+  ButtonGroup,
+  Divider,
+  Flex
+} from '@chakra-ui/react'
+import { Card, CardHeader, CardBody, CardFooter, Image } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import useTranslation from 'next-translate/useTranslation'
 import { useFetchTokenURIJSON } from '@/hooks/badge/useFetchMetaData'
@@ -42,7 +53,7 @@ const DAlabBadge = () => {
   if (isDisconnected) {
     return (
       <JoiNengajyoLayout>
-        <SimpleGrid columns={{ sm: 1, md: 1, lg: 2 }} spacing={5} color="white">
+        <SimpleGrid columns={{ sm: 1, md: 1, lg: 2 }} spacing={5}>
           <Box m={5}>
             <Heading mt={50} size="lg">
               {t('notConnected.title')}
@@ -67,37 +78,41 @@ const DAlabBadge = () => {
   if (!isDisconnected) {
     return (
       <JoiNengajyoLayout>
-        <SimpleGrid columns={{ sm: 1, md: 1, lg: 2 }} spacing={5} color="white">
-          <Box>
-            <Heading mt={50} size="lg">
-              {`Mint Joi's NENGAJYO`}
-            </Heading>
-            {tokenURIJSON?.image && <NFTImage imageUrl={tokenURIJSON?.image} />}
-          </Box>
-          <Box m={5}>
-            <Heading mt={50} size="lg">
-              {title}
-            </Heading>
-            <Text mt={10}>{description}</Text>
-            <Text mt={10}>
-              {minted ? (
-                <Text>{t('afterMint.notice')}</Text>
-              ) : (
-                <Button
-                  width="100%"
-                  minWidth="300px"
-                  onClick={() => mint()}
-                  colorScheme="teal"
-                  mt={2}
-                  loadingText="minting..."
-                  isLoading={isMinting}
-                >
-                  {t('connected.button')}
-                </Button>
+        <Flex justify="center" align="center">
+          <Card maxW="sm" boxShadow={0}>
+            <CardBody>
+              {tokenURIJSON?.image && (
+                <Image src={tokenURIJSON?.image} sizes={'120x120'} />
               )}
-            </Text>
-          </Box>
-        </SimpleGrid>
+              <Stack mt="6" spacing="3">
+                <Heading size="md">{`Mint Joi's NENGAJYO`}</Heading>
+                <Text>{t('notConnected.description')}</Text>
+                <Text>{description}</Text>
+              </Stack>
+            </CardBody>
+            <CardFooter>
+              <ButtonGroup spacing="2">
+                <Text>
+                  {minted ? (
+                    <Text>{t('afterMint.notice')}</Text>
+                  ) : (
+                    <Button
+                      width="100%"
+                      minWidth="300px"
+                      onClick={() => mint()}
+                      colorScheme="linkedin"
+                      mt={2}
+                      loadingText="minting..."
+                      isLoading={isMinting}
+                    >
+                      {t('connected.button')}
+                    </Button>
+                  )}
+                </Text>
+              </ButtonGroup>
+            </CardFooter>
+          </Card>
+        </Flex>
       </JoiNengajyoLayout>
     )
   }
