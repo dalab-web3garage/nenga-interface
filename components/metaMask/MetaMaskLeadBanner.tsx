@@ -29,7 +29,7 @@ const MetaMaskLeadBanner = () => {
       isMobile
         ? setModal({
             body: t('MMASK_MODAL_MOBILE_BODY'),
-            link: 'https://w3g.dalab.xyz/',
+            link: 'https://nengajyo.ito.com/',
             cta: t('MMASK_MODAL_MOBILE_CTA')
           })
         : setModal({
