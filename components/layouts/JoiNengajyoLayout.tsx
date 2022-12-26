@@ -34,34 +34,36 @@ const JoiNengajyoLayout = ({ children }: LayoutProps) => {
         p="4"
         style={{
           opacity: 0.85,
-          backgroundImage: 'linear-gradient( 125deg, #ffffff 40%, #0299ce)',
+          backgroundImage: 'linear-gradient( 125deg, #f5f5f5 35%, #0299ce)',
           backgroundSize: '100% 140px',
           borderBottom: '1px solid #000',
           marginBottom: '2em'
         }}
       >
-        <Flex>
-          <Box p={2}>
-            <Image src="/joi-ito-logo-300.png" boxSize="92px" />
-            {/* <Heading size={'md'}>年賀状 - Nengajyo</Heading> */}
-          </Box>
-          <Spacer />
-          <Box p={2}>
-            <Button
-              onClick={async () =>
-                await setLanguage(lang == 'en' ? 'ja' : 'en')
-              }
-              style={{
-                backgroundColor: 'rgba(255,255,255,0.25)',
-                fontWeight: '500'
-              }}
-            >
-              {lang == 'en' ? '日本語' : 'English'}
-            </Button>
-          </Box>
-        </Flex>
+        <Container maxW="6xl">
+          <Flex>
+            <Box p={0}>
+              <Image src="/joi-ito-logo-300.png" boxSize="92px" />
+              {/* <Heading size={'md'}>年賀状 - Nengajyo</Heading> */}
+            </Box>
+            <Spacer />
+            <Box p={2}>
+              <Button
+                onClick={async () =>
+                  await setLanguage(lang == 'en' ? 'ja' : 'en')
+                }
+                style={{
+                  backgroundColor: 'rgba(255,255,255,0.25)',
+                  fontWeight: '500'
+                }}
+              >
+                {lang == 'en' ? '日本語' : 'English'}
+              </Button>
+            </Box>
+          </Flex>
+        </Container>
       </Box>
-      <Container maxW="4xl">{children}</Container>
+      <Container maxW="6xl">{children}</Container>
       <DALabFooter />
     </>
   )
