@@ -7,7 +7,10 @@ import {
   Stack,
   ButtonGroup,
   Divider,
-  Flex
+  Flex,
+  VStack,
+  HStack,
+  Container
 } from '@chakra-ui/react'
 import { Card, CardHeader, CardBody, CardFooter, Image } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
@@ -23,6 +26,7 @@ import { useEffect, useState } from 'react'
 import { JoiNengajyoLayout } from '@/components/layouts/JoiNengajyoLayout'
 import setLanguage from 'next-translate/setLanguage'
 import { useNengajyoErc1155 } from '@/hooks/badge/useNengajyoErc1155'
+import { SideContent } from '@/components/common/SideContent'
 
 const DAlabBadge = () => {
   const router = useRouter()
@@ -55,12 +59,18 @@ const DAlabBadge = () => {
       <JoiNengajyoLayout>
         <SimpleGrid columns={{ sm: 1, md: 1, lg: 2 }} spacing={5}>
           <Box>
-            <Heading as="h2" color="white.600" style={{fontWeight:'300'}}>
+            <Heading as="h2" color="white.600" style={{ fontWeight: '300' }}>
               {t('notConnected.title')}
             </Heading>
             <Text mt={10}>{t('notConnected.description')}</Text>
             <Text mt={10}>
-              <ConnectMetaMask style={{ width: '100%', minWidth: '300px', backgroundColor:'#1A80B4' }}>
+              <ConnectMetaMask
+                style={{
+                  width: '100%',
+                  minWidth: '300px',
+                  backgroundColor: '#1A80B4'
+                }}
+              >
                 {t('notConnected.button')}
               </ConnectMetaMask>
             </Text>
@@ -78,45 +88,68 @@ const DAlabBadge = () => {
   if (!isDisconnected) {
     return (
       <JoiNengajyoLayout>
-        <Flex>
-          <Card maxW="sm" boxShadow={0}>
-            <CardBody m="0" p="0">
-              {tokenURIJSON?.image && (
-                <Image src={tokenURIJSON?.image} sizes={'120x120'} />
-              )}
-              <Stack mt="6" spacing="3">
-                <Heading as="h2" color="white.600" style={{fontWeight:'300'}}>
-                  {/* {`Mint Joi's NENGAJYO`} */}
-                  {t('notConnected.title')}
-                  <br></br>
-                  {t('connected.title')}
-                </Heading>
-                <Text>{t('notConnected.description')}</Text>
-                <Text>{description}</Text>
-              </Stack>
-            </CardBody>
-            <CardFooter m="0" p="0" mt="5">
-              <ButtonGroup spacing="2">
-                <Text>
-                  {minted ? (
-                    <Text>{t('afterMint.notice')}</Text>
-                  ) : (
-                    <Button
-                      width="100%"
-                      minWidth="300px"
-                      onClick={() => mint()}
-                      colorScheme="linkedin"
-                      mt={2}
-                      loadingText="minting..."
-                      isLoading={isMinting}
-                    >
-                      {t('connected.button')}
-                    </Button>
-                  )}
-                </Text>
-              </ButtonGroup>
-            </CardFooter>
-          </Card>
+        <Flex direction={['column', 'row']}>
+          <Container mb={10}>
+            <Card maxW="sm" boxShadow={0}>
+              <CardBody m="0" p="0">
+                {tokenURIJSON?.image && (
+                  <Image src={tokenURIJSON?.image} sizes={'120x120'} />
+                )}
+                <Stack mt="6" spacing="3">
+                  <Heading
+                    as="h2"
+                    color="white.600"
+                    style={{ fontWeight: '300' }}
+                  >
+                    {/* {`Mint Joi's NENGAJYO`} */}
+                    {t('notConnected.title')}
+                    <br></br>
+                    {t('connected.title')}
+                  </Heading>
+                  <Text>{t('notConnected.description')}</Text>
+                  <Text>{description}</Text>
+                </Stack>
+              </CardBody>
+              <CardFooter m="0" p="0" mt="5">
+                <ButtonGroup spacing="2">
+                  <Text>
+                    {minted ? (
+                      <Text>{t('afterMint.notice')}</Text>
+                    ) : (
+                      <Button
+                        width="100%"
+                        minWidth="300px"
+                        onClick={() => mint()}
+                        colorScheme="linkedin"
+                        mt={2}
+                        loadingText="minting..."
+                        isLoading={isMinting}
+                      >
+                        {t('connected.button')}
+                      </Button>
+                    )}
+                  </Text>
+                </ButtonGroup>
+              </CardFooter>
+            </Card>
+          </Container>
+          <SideContent>
+            <Text color={'gray.600'}>
+              Vero tum ex mara decet consequat pala at imputo.Torqueo voco
+              secundum loquor autem, sudo illum in.Venio quia, vereor jus,
+              ibidem molior tum adsum eu.
+            </Text>
+            <Text color={'gray.600'}>
+              Feugait macto virtus sed iusto ludus melior duis ut proprius
+              secundum exputo brevitas brevitas iusto.Secundum pala illum usitas
+              loquor, capto erat, indoles mara in ut.Illum autem multo persto ut
+              qui, populus pala vulputate.Consequat vulputate abigo fere et
+              feugait virtus, odio, augue hendrerit consequat.Feugiat loquor
+              premo abico proprius ut.Pecus at ullamcorper imputo modo nibh
+              consequat delenit.Ingenium acsi nulla paulatim quidem verto enim
+              opto esca odio cui.
+            </Text>
+          </SideContent>
         </Flex>
       </JoiNengajyoLayout>
     )
