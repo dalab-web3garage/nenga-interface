@@ -58,8 +58,9 @@ const MetaMaskLeadBanner = () => {
             <Button
               as="a"
               href={modal?.link}
-              colorScheme="teal"
+              //colorScheme="teal"
               target="_blank"
+              style={{ backgroundColor: '#1A80B4' }}
             >
               {modal?.cta}
             </Button>
