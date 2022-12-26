@@ -54,8 +54,8 @@ const DAlabBadge = () => {
     return (
       <JoiNengajyoLayout>
         <SimpleGrid columns={{ sm: 1, md: 1, lg: 2 }} spacing={5}>
-          <Box m={5}>
-            <Heading mt={50} size="lg" style={{ fontWeight:'300' }}>
+          <Box>
+            <Heading as="h2" color="white.600" style={{fontWeight:'300'}}>
               {t('notConnected.title')}
             </Heading>
             <Text mt={10}>{t('notConnected.description')}</Text>
@@ -78,19 +78,24 @@ const DAlabBadge = () => {
   if (!isDisconnected) {
     return (
       <JoiNengajyoLayout>
-        <Flex justify="center" align="center">
+        <Flex>
           <Card maxW="sm" boxShadow={0}>
-            <CardBody>
+            <CardBody m="0" p="0">
               {tokenURIJSON?.image && (
                 <Image src={tokenURIJSON?.image} sizes={'120x120'} />
               )}
               <Stack mt="6" spacing="3">
-                <Heading size="md">{`Mint Joi's NENGAJYO`}</Heading>
+                <Heading as="h2" color="white.600" style={{fontWeight:'300'}}>
+                  {/* {`Mint Joi's NENGAJYO`} */}
+                  {t('notConnected.title')}
+                  <br></br>
+                  {t('connected.title')}
+                </Heading>
                 <Text>{t('notConnected.description')}</Text>
                 <Text>{description}</Text>
               </Stack>
             </CardBody>
-            <CardFooter>
+            <CardFooter m="0" p="0" mt="5">
               <ButtonGroup spacing="2">
                 <Text>
                   {minted ? (
