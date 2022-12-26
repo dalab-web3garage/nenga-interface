@@ -6,8 +6,8 @@ const Home: NextPage = () => {
   return (
     <>
       <JoiNengajyoLayout>
-        <Heading as="h2" color="white.600">
-          {`Welcome to Joi's Nengajyo page`}
+        <Heading as="h2" color="white.600" style={{fontWeight:'300'}}>
+          {`Nengajyo 2023`}
         </Heading>
         <Stack>
           <Link mt="1rem" href="/en/nengajyo/1">

@@ -55,12 +55,12 @@ const DAlabBadge = () => {
       <JoiNengajyoLayout>
         <SimpleGrid columns={{ sm: 1, md: 1, lg: 2 }} spacing={5}>
           <Box m={5}>
-            <Heading mt={50} size="lg">
+            <Heading mt={50} size="lg" style={{ fontWeight:'300' }}>
               {t('notConnected.title')}
             </Heading>
             <Text mt={10}>{t('notConnected.description')}</Text>
             <Text mt={10}>
-              <ConnectMetaMask style={{ with: '100%', minWidth: '300px' }}>
+              <ConnectMetaMask style={{ width: '100%', minWidth: '300px', backgroundColor:'#1A80B4' }}>
                 {t('notConnected.button')}
               </ConnectMetaMask>
             </Text>
