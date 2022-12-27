@@ -41,7 +41,7 @@ const contractAddress: ContractAddress = {
     [chainId.polygon]: '0x9BE9c015a1EE9f33E6e3ffd65826ea27F82EDd64'
   },
   nengajyo: {
-    [chainId.goerli]: '0x388f1892f3fd5DbddDa50940cb9aFC1d8B402d7F',
+    [chainId.goerli]: '0xbab20ace7f253e3f139f1c9F87156e01A12b2000',
     // [chainId.mainnet]: '0x2c3530b4642ff8fceb6ab5fc740381a358968af1'
   },
   dgPoap: {
