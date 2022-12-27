@@ -6,18 +6,14 @@ import {
   Box,
   Stack,
   ButtonGroup,
-  Divider,
   Flex,
-  VStack,
-  HStack,
   Container,
   Link
 } from '@chakra-ui/react'
-import { Card, CardHeader, CardBody, CardFooter, Image } from '@chakra-ui/react'
+import { Card, CardBody, CardFooter, Image } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import useTranslation from 'next-translate/useTranslation'
 import { useFetchTokenURIJSON } from '@/hooks/badge/useFetchMetaData'
-import { NFTImage } from '@/components/NFTImage'
 import { getContractAddress } from '@/utils/contractAddress'
 import { useAccount, useConnect, useNetwork } from 'wagmi'
 import { useMintBadge } from '@/hooks/badge/useMintBadge'
@@ -25,7 +21,6 @@ import { useBadgeBalanceOf } from '@/hooks/badge/useBalanceOf'
 import { ConnectMetaMask } from '@/components/metaMask/Connect'
 import { useEffect, useState } from 'react'
 import { JoiNengajyoLayout } from '@/components/layouts/JoiNengajyoLayout'
-import setLanguage from 'next-translate/setLanguage'
 import { useNengajyoErc1155 } from '@/hooks/badge/useNengajyoErc1155'
 import { SideContent } from '@/components/common/SideContent'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
@@ -118,7 +113,11 @@ const DAlabBadge = () => {
                     {minted ? (
                       <>
                         <Text>{t('afterMint.notice')}</Text>
-                        <Link href="https://opensea.io/" isExternal fontSize={'md'}>
+                        <Link
+                          href="https://opensea.io/"
+                          isExternal
+                          fontSize={'md'}
+                        >
                           opensea <ExternalLinkIcon mx="2px" />
                         </Link>
                       </>
