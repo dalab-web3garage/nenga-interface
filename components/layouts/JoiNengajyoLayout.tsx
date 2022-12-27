@@ -1,33 +1,23 @@
 import {
   Container,
-  Heading,
   Box,
   Flex,
   Spacer,
-  useColorMode,
   Button,
-  Image,
-  SimpleGrid,
-  Stack,
-  Text
+  Image
 } from '@chakra-ui/react'
-import { useRouter } from 'next/router'
 import useTranslation from 'next-translate/useTranslation'
 import { SwitchNetworkAlert } from '@/components/metaMask/SwitchNetworkAlert'
 import { MetaMaskLeadBanner } from '@/components/metaMask/MetaMaskLeadBanner'
-import { DALabFooter } from '@/components/footer'
-import { MoonIcon, SunIcon } from '@chakra-ui/icons'
+import { Footer } from '@/components/footer'
 import setLanguage from 'next-translate/setLanguage'
-import { useEffect } from 'react'
 
 interface LayoutProps {
   children: React.ReactNode
 }
 
 const JoiNengajyoLayout = ({ children }: LayoutProps) => {
-  const router = useRouter()
   const { t, lang } = useTranslation('dalabs')
-  const { colorMode, toggleColorMode } = useColorMode()
 
   return (
     <>
@@ -46,8 +36,7 @@ const JoiNengajyoLayout = ({ children }: LayoutProps) => {
         <Container maxW="6xl">
           <Flex>
             <Box p={0}>
-              <Image src="/joi-ito-logo-300.png" boxSize="92px" />
-              {/* <Heading size={'md'}>年賀状 - Nengajyo</Heading> */}
+              <Image src="/joi-ito-logo-300.png" boxSize="92px" alt="joi ito" />
             </Box>
             <Spacer />
             <Box p={2}>
@@ -67,7 +56,7 @@ const JoiNengajyoLayout = ({ children }: LayoutProps) => {
         </Container>
       </Box>
       <Container maxW="6xl">{children}</Container>
-      <DALabFooter />
+      <Footer />
     </>
   )
 }
