@@ -12,6 +12,6 @@
   "afterMint": {
     "title": "Mintできました!",
     "description": "MintしたNFTはウォレットに紐づいているので、すでにこのNFTを所有していることになります。",
-    "notice": "Openseaを確認してみてください! MINTしたNFTを確認できたと思います。"
+    "notice": "Openseaを確認してみてください! MINTしたNFTを確認できたと思います。OpenSeaへの反映は3,4分ほどかかります。"
   }
 }
