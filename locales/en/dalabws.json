@@ -12,6 +12,6 @@
   "afterMint": {
     "title": "Minted!",
     "description": "Success is sweet.  This NFT is now associated with this wallet, in effect your property.",
-    "notice": "Visit <a href='https://opensea.org'>OpenSea.org</a> to see it in your collection."
+    "notice": "Visit OpenSea to see it in your collection."
   }
 }

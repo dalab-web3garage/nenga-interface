@@ -10,7 +10,8 @@ import {
   Flex,
   VStack,
   HStack,
-  Container
+  Container,
+  Link
 } from '@chakra-ui/react'
 import { Card, CardHeader, CardBody, CardFooter, Image } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
@@ -27,6 +28,7 @@ import { JoiNengajyoLayout } from '@/components/layouts/JoiNengajyoLayout'
 import setLanguage from 'next-translate/setLanguage'
 import { useNengajyoErc1155 } from '@/hooks/badge/useNengajyoErc1155'
 import { SideContent } from '@/components/common/SideContent'
+import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 const DAlabBadge = () => {
   const router = useRouter()
@@ -114,7 +116,12 @@ const DAlabBadge = () => {
                 <ButtonGroup spacing="2">
                   <Text>
                     {minted ? (
-                      <Text>{t('afterMint.notice')}</Text>
+                      <>
+                        <Text>{t('afterMint.notice')}</Text>
+                        <Link href="https://opensea.io/" isExternal fontSize={'md'}>
+                          opensea <ExternalLinkIcon mx="2px" />
+                        </Link>
+                      </>
                     ) : (
                       <Button
                         width="100%"
