@@ -22,7 +22,7 @@ const client = createClient({
     if (config.chainId == chain.mainnet.id) {
       return new providers.AlchemyProvider(
         config.chainId,
-        process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_ETH
+        process.env.NEXT_PUBLIC_ALCHEMY_API_KEY
       )
     }
     if (config.chainId == chain.goerli.id) {

@@ -42,7 +42,7 @@ const contractAddress: ContractAddress = {
   },
   nengajyo: {
     [chainId.goerli]: '0xbab20ace7f253e3f139f1c9F87156e01A12b2000',
-    // [chainId.mainnet]: '0x2c3530b4642ff8fceb6ab5fc740381a358968af1'
+    [chainId.mainnet]: '0x9a09CfC55035D407a5514692C3a26F5ea2afB956'
   },
   dgPoap: {
     [chainId.goerli]: '0xC0Cd0Ea2c8A909E93e0F3929F05862C1477B788E',
