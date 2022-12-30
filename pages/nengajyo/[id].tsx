@@ -98,12 +98,8 @@ const DAlabBadge = () => {
                     color="white.600"
                     style={{ fontWeight: '300' }}
                   >
-                    {/* {`Mint Joi's NENGAJYO`} */}
-                    {t('notConnected.title')}
-                    <br></br>
-                    {t('connected.title')}
+                    {title}
                   </Heading>
-                  <Text>{t('notConnected.description')}</Text>
                   <Text>{description}</Text>
                 </Stack>
               </CardBody>

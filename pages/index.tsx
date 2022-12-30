@@ -22,10 +22,10 @@ const Home: NextPage = () => {
               {`Nengajyo 2023`}
             </Heading>
             <Stack>
-              <Link mt="1rem" href="/en/nengajyo/1">
+              <Link mt="1rem" href="/nengajyo/1">
                 <Button>Nengajyo NFT mint page</Button>
               </Link>
-              <Link mt="1rem" href="/nengajyo/1">
+              <Link mt="1rem" href="/ja/nengajyo/1">
                 <Button>Nengayoのmintページ</Button>
               </Link>
             </Stack>
