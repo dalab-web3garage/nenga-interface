@@ -1,13 +1,17 @@
 {
   "notConnected": {
-    "title": "年賀状NFTをMintしましょう!",
+    "title": "メタマスクのウォレットに接続してください",
     "description": "まず、ウォレットを接続する必要があります。",
     "button": "メタマスクのウォレットに接続する"
   },
   "connected": {
-    "title": "メタマスクのウォレットに接続できました",
+    "title": "年賀状NFTをMintしましょう!",
     "description": "ウォレットが接続できたので、これでNFTをMINTできます。",
     "button": "年賀状NFTをMINTする"
+  },
+  "wrongNetwork": {
+    "title": "NFTをMintするためにはEthereumに接続してください",
+    "button": "Ethereum Networkに接続する"
   },
   "afterMint": {
     "title": "Mintできました!",
