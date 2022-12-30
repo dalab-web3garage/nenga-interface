@@ -15,7 +15,7 @@ import { useRouter } from 'next/router'
 import useTranslation from 'next-translate/useTranslation'
 import { useFetchTokenURIJSON } from '@/hooks/badge/useFetchMetaData'
 import { getContractAddress } from '@/utils/contractAddress'
-import { useAccount, useConnect, useNetwork } from 'wagmi'
+import { chainId, useAccount, useConnect, useNetwork } from 'wagmi'
 import { useMintBadge } from '@/hooks/badge/useMintBadge'
 import { useBadgeBalanceOf } from '@/hooks/badge/useBalanceOf'
 import { ConnectMetaMask } from '@/components/metaMask/Connect'
@@ -29,7 +29,8 @@ const DAlabBadge = () => {
   const router = useRouter()
   const { id } = router.query
   const tokenID = parseInt(id as string)
-  const { activeChain } = useNetwork()
+  const [domLoaded, setDomLoaded] = useState(false)
+  const { activeChain, switchNetwork } = useNetwork()
   const { t } = useTranslation('dalabws')
   const { data } = useAccount()
   const nengajyoErc1155 = getContractAddress({
@@ -47,10 +48,17 @@ const DAlabBadge = () => {
   const [minted, setMinted] = useState(false)
 
   useEffect(() => {
+    setDomLoaded(true)
+  }, [])
+
+  useEffect(() => {
     setMinted(hasNft)
   }, [badge?.mintable, hasNft])
 
   const { isDisconnected } = useConnect()
+  if (!domLoaded) {
+    return null
+  }
   if (isDisconnected) {
     return (
       <JoiNengajyoLayout>
@@ -77,6 +85,25 @@ const DAlabBadge = () => {
     )
   }
 
+  if (activeChain?.id !== chainId.mainnet) {
+    return (
+      <JoiNengajyoLayout>
+        <SimpleGrid columns={{ sm: 1, md: 1, lg: 2 }} spacing={5}>
+          <Box>
+            <Heading as="h2" color="white.600" style={{ fontWeight: '300' }}>
+              {t('wrongNetwork.title')}
+            </Heading>
+            <Text mt={10}>
+              <Button onClick={() => switchNetwork?.(chainId.mainnet)}>
+                {t('wrongNetwork.button')}
+              </Button>
+            </Text>
+          </Box>
+        </SimpleGrid>
+      </JoiNengajyoLayout>
+    )
+  }
+
   const title = minted ? t('afterMint.title') : t('connected.title')
   const description = minted
     ? t('afterMint.description')
@@ -90,7 +117,11 @@ const DAlabBadge = () => {
             <Card maxW="sm" boxShadow={0}>
               <CardBody m="0" p="0">
                 {tokenURIJSON?.image && (
-                  <Image src={tokenURIJSON?.image} sizes={'120x120'} />
+                  <Image
+                    src={tokenURIJSON?.image}
+                    sizes={'120x120'}
+                    alt="NFT-IMAGE"
+                  />
                 )}
                 <Stack mt="6" spacing="3">
                   <Heading
