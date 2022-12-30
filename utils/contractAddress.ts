@@ -1,3 +1,4 @@
+import { constants } from 'ethers'
 import { chainId } from 'wagmi'
 
 interface ContractAddress {
@@ -53,7 +54,7 @@ const contractAddress: ContractAddress = {
 const defaultChainID = process.env.production ? chainId.polygon : chainId.goerli
 
 const getContractAddress = ({ name, chainId }: getContractAddressArg) => {
-  return contractAddress[name][chainId || defaultChainID]
+  return contractAddress?.[name]?.[chainId || defaultChainID] || constants.AddressZero
 }
 
 export { contractAddress, defaultChainID, getContractAddress }
