@@ -2,7 +2,7 @@
   "locales": ["en", "ja"],
   "defaultLocale": "en",
   "pages": {
-    "*": ["common"],
+    "*": ["common", "sideBar"],
     "/badges": ["badge"],
     "/badges/[id]": ["badge"],
     "/claim": ["claim"],
