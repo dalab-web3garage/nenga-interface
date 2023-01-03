@@ -143,7 +143,6 @@ const LP = () => {
               </CardFooter>
             </Card>
           </Container>
-          <SideContent />
         </Flex>
       </JoiNengajyoLayout>
     )
@@ -163,7 +162,10 @@ const LP = () => {
                     style={{ fontWeight: '300' }}
                   >
                     {hasNft ? (
-                      <Text>Special message for the green holder</Text>
+                      <>
+                        <Text>welcome to game ....</Text>
+                        <Text>Special message</Text>
+                      </>
                     ) : (
                       <Text>
                         You do not own green NFT, mint first green nengajyo
@@ -180,7 +182,6 @@ const LP = () => {
               </CardFooter>
             </Card>
           </Container>
-          <SideContent />
         </Flex>
       </JoiNengajyoLayout>
     )
