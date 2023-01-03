@@ -10,6 +10,7 @@
     "/w3g/[id]": ["dalabws"],
     "/nengajyo": ["dalabws"],
     "/nengajyo/[id]": ["dalabws"],
+    "/lp": ["dalabws"],
     "/w3g/eth/[id]": ["dalabws"],
     "/dg": ["badge"],
     "/dg/[id]": ["dg"],
